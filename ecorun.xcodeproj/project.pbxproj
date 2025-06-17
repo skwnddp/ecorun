@@ -3,27 +3,44 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0448B94D2E0125F200E359E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448B94C2E0125F200E359E6 /* AppDelegate.swift */; };
 		0448B94F2E0125F200E359E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448B94E2E0125F200E359E6 /* SceneDelegate.swift */; };
-		0448B9512E0125F200E359E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448B9502E0125F200E359E6 /* ViewController.swift */; };
 		0448B9542E0125F200E359E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0448B9522E0125F200E359E6 /* Main.storyboard */; };
 		0448B9562E0125F300E359E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0448B9552E0125F300E359E6 /* Assets.xcassets */; };
 		0448B9592E0125F300E359E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0448B9572E0125F300E359E6 /* LaunchScreen.storyboard */; };
+		0448B9612E01329D00E359E6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448B9602E01329D00E359E6 /* HomeViewController.swift */; };
+		0448B9652E0134D000E359E6 /* CarbonSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448B9642E0134D000E359E6 /* CarbonSource.swift */; };
+		0448B9672E01350600E359E6 /* CarbonStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448B9662E01350600E359E6 /* CarbonStorage.swift */; };
+		0448B9692E0135C500E359E6 /* WalkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448B9682E0135C500E359E6 /* WalkViewController.swift */; };
+		0448B96B2E0135D700E359E6 /* RunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448B96A2E0135D700E359E6 /* RunViewController.swift */; };
+		0448B96F2E01360700E359E6 /* BikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448B96E2E01360700E359E6 /* BikeViewController.swift */; };
+		0448B9712E01365800E359E6 /* RecycleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448B9702E01365800E359E6 /* RecycleViewController.swift */; };
+		0448B9732E01367500E359E6 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448B9722E01367500E359E6 /* InfoViewController.swift */; };
+		0448B9762E01493300E359E6 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 0448B9752E01493300E359E6 /* Lottie */; };
+		0448B9782E01592900E359E6 /* RewardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448B9772E01592900E359E6 /* RewardViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0448B9492E0125F200E359E6 /* ecorun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ecorun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0448B94C2E0125F200E359E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0448B94E2E0125F200E359E6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0448B9502E0125F200E359E6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0448B9532E0125F200E359E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0448B9552E0125F300E359E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0448B9582E0125F300E359E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0448B95A2E0125F300E359E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0448B9602E01329D00E359E6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		0448B9642E0134D000E359E6 /* CarbonSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbonSource.swift; sourceTree = "<group>"; };
+		0448B9662E01350600E359E6 /* CarbonStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbonStorage.swift; sourceTree = "<group>"; };
+		0448B9682E0135C500E359E6 /* WalkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkViewController.swift; sourceTree = "<group>"; };
+		0448B96A2E0135D700E359E6 /* RunViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunViewController.swift; sourceTree = "<group>"; };
+		0448B96E2E01360700E359E6 /* BikeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeViewController.swift; sourceTree = "<group>"; };
+		0448B9702E01365800E359E6 /* RecycleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecycleViewController.swift; sourceTree = "<group>"; };
+		0448B9722E01367500E359E6 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		0448B9772E01592900E359E6 /* RewardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0448B9762E01493300E359E6 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,12 +75,20 @@
 			isa = PBXGroup;
 			children = (
 				0448B94C2E0125F200E359E6 /* AppDelegate.swift */,
+				0448B9682E0135C500E359E6 /* WalkViewController.swift */,
 				0448B94E2E0125F200E359E6 /* SceneDelegate.swift */,
-				0448B9502E0125F200E359E6 /* ViewController.swift */,
 				0448B9522E0125F200E359E6 /* Main.storyboard */,
+				0448B9602E01329D00E359E6 /* HomeViewController.swift */,
 				0448B9552E0125F300E359E6 /* Assets.xcassets */,
 				0448B9572E0125F300E359E6 /* LaunchScreen.storyboard */,
 				0448B95A2E0125F300E359E6 /* Info.plist */,
+				0448B9642E0134D000E359E6 /* CarbonSource.swift */,
+				0448B9662E01350600E359E6 /* CarbonStorage.swift */,
+				0448B96A2E0135D700E359E6 /* RunViewController.swift */,
+				0448B96E2E01360700E359E6 /* BikeViewController.swift */,
+				0448B9702E01365800E359E6 /* RecycleViewController.swift */,
+				0448B9722E01367500E359E6 /* InfoViewController.swift */,
+				0448B9772E01592900E359E6 /* RewardViewController.swift */,
 			);
 			path = ecorun;
 			sourceTree = "<group>";
@@ -83,6 +109,9 @@
 			dependencies = (
 			);
 			name = ecorun;
+			packageProductDependencies = (
+				0448B9752E01493300E359E6 /* Lottie */,
+			);
 			productName = ecorun;
 			productReference = 0448B9492E0125F200E359E6 /* ecorun.app */;
 			productType = "com.apple.product-type.application";
@@ -110,6 +139,9 @@
 				Base,
 			);
 			mainGroup = 0448B9402E0125F200E359E6;
+			packageReferences = (
+				0448B9742E01493300E359E6 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = 0448B94A2E0125F200E359E6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,9 +169,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0448B9512E0125F200E359E6 /* ViewController.swift in Sources */,
 				0448B94D2E0125F200E359E6 /* AppDelegate.swift in Sources */,
+				0448B9652E0134D000E359E6 /* CarbonSource.swift in Sources */,
+				0448B9732E01367500E359E6 /* InfoViewController.swift in Sources */,
 				0448B94F2E0125F200E359E6 /* SceneDelegate.swift in Sources */,
+				0448B96F2E01360700E359E6 /* BikeViewController.swift in Sources */,
+				0448B9782E01592900E359E6 /* RewardViewController.swift in Sources */,
+				0448B9672E01350600E359E6 /* CarbonStorage.swift in Sources */,
+				0448B9612E01329D00E359E6 /* HomeViewController.swift in Sources */,
+				0448B96B2E0135D700E359E6 /* RunViewController.swift in Sources */,
+				0448B9692E0135C500E359E6 /* WalkViewController.swift in Sources */,
+				0448B9712E01365800E359E6 /* RecycleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +379,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0448B9742E01493300E359E6 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = exactVersion;
+				version = 3.4.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0448B9752E01493300E359E6 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0448B9742E01493300E359E6 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0448B9412E0125F200E359E6 /* Project object */;
 }
