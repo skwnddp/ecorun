@@ -22,24 +22,6 @@ IOS 정책상 실제 GPS 대신 시뮬레이션을 통해 환경 제약 없이 �
 
 ---
 
-## ⚙️ 설치 및 실행
-
-```bash
-git clone https://github.com/yourusername/ecorun.git
-cd ecorun
-overwiew of structure
-open ecorun.xcodeproj  # Xcode 12.5 이상
-```
-
-1. Xcode에서 `ecorun` 타깃을 선택합니다.
-2. 빌드 후 시뮬레이터 또는 실제 기기에서 실행합니다.
-
-**Dependencies**
-
-* [Lottie](https://github.com/airbnb/lottie-ios) (Swift Package Manager) v3.4.2
-
----
-
 ## 🗂 프로젝트 구조
 
 ```text
@@ -60,18 +42,3 @@ ecorun/
 ├── MyCustomFonts.swift         # 커스텀 폰트 등록
 └── Fonts/Galmuri11-Bold.ttf
 ```
-
----
-
-## 🌱 향후 계획
-
-* **클라우드 동기화**: Firebase 또는 MongoDB 연동으로 사용자별 데이터 저장 및 동기화
-* **HealthKit 연동**: 실제 운동 데이터 가져오기 및 통계 차트 제공
-* **분리 배출 확장**: 전자제품, 음식물 등 추가 아이템 지원
-* **소셜 공유**: 운동 기록·절감량을 SNS에 공유 기능
-
----
-
-## 📄 라이선스
-
-MIT License © 2025 ecorun 개발팀
