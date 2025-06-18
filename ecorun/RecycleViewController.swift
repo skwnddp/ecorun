@@ -14,6 +14,7 @@ class RecycleViewController: UIViewController {
     @IBOutlet weak var btnCan: UIButton!
     @IBOutlet weak var btnGlass: UIButton!
     @IBOutlet weak var btnPaper: UIButton!
+    @IBOutlet weak var lblCarbonInfo: UILabel!
     @IBOutlet weak var lottie: AnimationView!
     @IBOutlet weak var ttt: UIButton!
     
@@ -27,6 +28,27 @@ class RecycleViewController: UIViewController {
             button?.layer.cornerRadius = 10
             button?.clipsToBounds = true
         }
+        
+        // 단락 스타일: 중앙 정렬 + 줄 간격
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .center
+        paragraphStyle.lineSpacing = 4
+        
+        // 전체 속성: Galmuri11-Bold, 자간, 단락 스타일
+        let attrs: [NSAttributedString.Key: Any] = [
+            .font: UIFont(name: "Galmuri11-Bold", size: 16)!,
+            .kern: 1.2,
+            .paragraphStyle: paragraphStyle
+        ]
+        
+        // 텍스트 구성
+        let header = "1개 기준으로..."
+        let first  = "플라스틱은 \(CarbonSource.recyclePet.calculateCarbon(amount: 1))g    캔은 \(CarbonSource.recycleCan.calculateCarbon(amount: 1))g"
+        let second = "유리는 \(CarbonSource.recycleGlass.calculateCarbon(amount: 1))g    종이는 \(CarbonSource.recyclePaper.calculateCarbon(amount: 1))g"
+        let fullText = "\(header)\n\(first)\n\(second)"
+        
+        // 한 번에 적용
+        lblCarbonInfo.attributedText = NSAttributedString(string: fullText, attributes: attrs)
     }
 
     // MARK: - IBActions

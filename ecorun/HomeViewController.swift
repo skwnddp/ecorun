@@ -15,11 +15,11 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
 
     private let messages = [
-        "안녕! 나는 고양이야 😺",
-        "산책할 준비됐어?",
+        "안녕! 나는 지구를 지키고픈 고양이야 😺",
+        "같이 달려볼 준비됐어?",
         "목표 거리를 설정해 줘!",
-        "멈추려면 버튼 누르면 돼",
-        "탄소를 절감해 보자! 🌱"
+        "분리배출도 지구를 지키는데 큰 도움이 돼",
+        "탄소를 절감해서 지구를 살려보자! 🌱"
     ]
     private var msgIndex = 0
     private var bubble: SpeechBubbleView!
@@ -27,7 +27,7 @@ class HomeViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "메인 화면"
+//        title = "메인 화면"
         setupButtons()
         setupLottie()
         addSpeechBubble()
@@ -93,11 +93,24 @@ class HomeViewController: UIViewController {
         lottie.play()
     }
     
+    private var didOffsetInitialBubble = false
     private func addSpeechBubble() {
+        bubble?.removeFromSuperview()
         bubble = SpeechBubbleView(text: messages[msgIndex])
-        // 크기 계산
-        let w: CGFloat = 160, h: CGFloat = 60
-        bubble.frame = CGRect(x: -w, y: imageView.frame.minY - h - 8, width: w, height: h)
+        let width: CGFloat = 160
+        let height: CGFloat = 60
+        let baseY = imageView.frame.minY - height - 20
+
+        // 처음 한 번만 +20 오프셋, 이후에는 기본 baseY
+        let yPos: CGFloat
+        if msgIndex == 0 && !didOffsetInitialBubble {
+            yPos = baseY - 144
+            didOffsetInitialBubble = true
+        } else {
+            yPos = baseY
+        }
+
+        bubble.frame = CGRect(x: -width, y: yPos, width: width, height: height)
         view.addSubview(bubble)
     }
 

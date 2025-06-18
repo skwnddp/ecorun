@@ -13,11 +13,11 @@ class SpeechBubbleView: UIView {
     init(text: String) {
         super.init(frame: .zero)
         backgroundColor = .clear
-
+        
         label.text = text
         label.numberOfLines = 0
         label.textColor = .white
-        label.font = .systemFont(ofSize: 14)
+        label.font = UIFont(name: "Galmuri11-Bold", size: 14)
         label.textAlignment = .center
         addSubview(label)
     }
@@ -26,9 +26,16 @@ class SpeechBubbleView: UIView {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        // 레이블 패딩
-        let inset: CGFloat = 8
-        label.frame = bounds.insetBy(dx: inset, dy: inset)
+        // 가로 여백 8, 상단 여백 8, 하단 여백 16 으로 조정
+        let horizontalInset: CGFloat = 8
+        let topInset: CGFloat = 8
+        let bottomInset: CGFloat = 16
+        label.frame = CGRect(
+            x: horizontalInset,
+            y: topInset,
+            width: bounds.width - 2*horizontalInset,
+            height: bounds.height - topInset - bottomInset
+        )
     }
 
     override func draw(_ rect: CGRect) {
