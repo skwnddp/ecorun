@@ -14,6 +14,15 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var lottie: AnimationView!
     @IBOutlet weak var imageView: UIImageView!
 
+    private let messages = [
+        "안녕! 나는 고양이야 😺",
+        "산책할 준비됐어?",
+        "목표 거리를 설정해 줘!",
+        "멈추려면 버튼 누르면 돼",
+        "탄소를 절감해 보자! 🌱"
+    ]
+    private var msgIndex = 0
+    private var bubble: SpeechBubbleView!
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -21,6 +30,8 @@ class HomeViewController: UIViewController {
         title = "메인 화면"
         setupButtons()
         setupLottie()
+        addSpeechBubble()
+        animateBubble()
         
         imageView.image = UIImage(named: "world")
         imageView.contentMode = .scaleAspectFill
@@ -36,7 +47,7 @@ class HomeViewController: UIViewController {
         let totalCarbon = CarbonStorage.shared.totalCarbon()
         let todayCarbon = CarbonStorage.shared.todayCarbon()
         let currentStage = CarbonStorage.shared.stage(for: totalCarbon)
-//🌱
+        //🌱
         levelLabel.text = "🌱 새싹 \(currentStage) 단계"
         carbonLabel.text = "오늘의 탄소 절감량 : \(todayCarbon)g"
     }
@@ -80,6 +91,34 @@ class HomeViewController: UIViewController {
         lottie.isOpaque = false
         lottie.loopMode  = .loop
         lottie.play()
+    }
+    
+    private func addSpeechBubble() {
+        bubble = SpeechBubbleView(text: messages[msgIndex])
+        // 크기 계산
+        let w: CGFloat = 160, h: CGFloat = 60
+        bubble.frame = CGRect(x: -w, y: imageView.frame.minY - h - 8, width: w, height: h)
+        view.addSubview(bubble)
+    }
+
+    private func animateBubble() {
+        let screenW = view.bounds.width
+        let duration: TimeInterval = 4.0
+
+        // 다음 메시지 준비
+        func nextMessage() {
+            msgIndex = (msgIndex + 1) % messages.count
+            bubble.removeFromSuperview()
+            addSpeechBubble()
+        }
+
+        UIView.animate(withDuration: duration, delay: 0, options: [.curveLinear], animations: {
+            self.bubble.frame.origin.x = screenW
+        }, completion: { _ in
+            nextMessage()
+            // 재귀 호출로 루프
+            self.animateBubble()
+        })
     }
     
     override func viewDidLayoutSubviews() {

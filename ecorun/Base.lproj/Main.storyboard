@@ -506,6 +506,17 @@
                                     <constraint firstItem="om9-cS-Pe3" firstAttribute="top" secondItem="OSg-lV-wts" secondAttribute="bottom" constant="20" id="bW1-Tb-OXE"/>
                                 </constraints>
                             </stackView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lGl-nb-g3s" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="107" y="599.5" width="200" height="200"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Zel-St-F3p"/>
+                                    <constraint firstAttribute="width" constant="200" id="t8g-pa-SMu"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="walk"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KKL-x2-VeI">
                                 <rect key="frame" x="107" y="733.5" width="200" height="50"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
@@ -526,11 +537,11 @@
                                     </attributedString>
                                 </state>
                                 <connections>
-                                    <action selector="startTapped:" destination="TuA-QY-LN4" eventType="touchUpInside" id="pdy-pO-84g"/>
+                                    <action selector="startTapped:" destination="TuA-QY-LN4" eventType="touchUpInside" id="cf4-Af-bvT"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="E1U-QX-vFO" userLabel="Stack TG">
-                                <rect key="frame" x="52" y="789.5" width="310" height="50"/>
+                                <rect key="frame" x="52" y="769.5" width="310" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oc3-lp-YKF">
                                         <rect key="frame" x="0.0" y="0.0" width="150" height="50"/>
@@ -551,7 +562,7 @@
                                             </attributedString>
                                         </state>
                                         <connections>
-                                            <action selector="pauseTapped:" destination="TuA-QY-LN4" eventType="touchUpInside" id="OlL-qJ-gzj"/>
+                                            <action selector="pauseTapped:" destination="TuA-QY-LN4" eventType="touchUpInside" id="O6P-ny-Vnv"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mrL-Cn-Sls">
@@ -573,22 +584,11 @@
                                             </attributedString>
                                         </state>
                                         <connections>
-                                            <action selector="stopTapped:" destination="TuA-QY-LN4" eventType="touchUpInside" id="eZh-Fx-iDA"/>
+                                            <action selector="stopTapped:" destination="TuA-QY-LN4" eventType="touchUpInside" id="pLe-Rq-o2P"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </stackView>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lGl-nb-g3s" customClass="AnimationView" customModule="Lottie">
-                                <rect key="frame" x="107" y="599.5" width="200" height="200"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="Zel-St-F3p"/>
-                                    <constraint firstAttribute="width" constant="200" id="t8g-pa-SMu"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="walk"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qwv-1I-9d8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -598,7 +598,7 @@
                             <constraint firstItem="KKL-x2-VeI" firstAttribute="top" secondItem="W7o-VS-jSe" secondAttribute="bottom" constant="144" id="L3m-g1-fip"/>
                             <constraint firstItem="lid-gH-D6q" firstAttribute="leading" secondItem="qwv-1I-9d8" secondAttribute="leading" constant="10" id="NSy-G3-Dys"/>
                             <constraint firstItem="W7o-VS-jSe" firstAttribute="top" secondItem="lid-gH-D6q" secondAttribute="bottom" constant="10" id="Q5f-g5-8WV"/>
-                            <constraint firstItem="E1U-QX-vFO" firstAttribute="top" secondItem="W7o-VS-jSe" secondAttribute="bottom" constant="200" id="Rey-Ce-AQ5"/>
+                            <constraint firstItem="E1U-QX-vFO" firstAttribute="top" secondItem="W7o-VS-jSe" secondAttribute="bottom" constant="180" id="Rey-Ce-AQ5"/>
                             <constraint firstItem="KKL-x2-VeI" firstAttribute="centerX" secondItem="g4a-In-hpk" secondAttribute="centerX" id="dBY-si-NlP"/>
                             <constraint firstItem="lGl-nb-g3s" firstAttribute="centerX" secondItem="g4a-In-hpk" secondAttribute="centerX" id="edy-Sw-6y0"/>
                             <constraint firstItem="qwv-1I-9d8" firstAttribute="trailing" secondItem="W7o-VS-jSe" secondAttribute="trailing" constant="10" id="f9Z-Tx-JJY"/>
@@ -679,22 +679,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="12" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRF-OS-aoB">
-                                <rect key="frame" x="66" y="286" width="282" height="156"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRF-OS-aoB">
+                                <rect key="frame" x="130" y="364" width="154" height="28"/>
                                 <attributedString key="attributedText">
                                     <fragment content="리워드 메시지">
                                         <attributes>
                                             <font key="NSFont" size="24" name="Galmuri11-Bold"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rrZ-7Z-E1O">
-                                <rect key="frame" x="53" y="435" width="308" height="62"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VTK-ap-NH2" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="107" y="138" width="200" height="200"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="71m-8b-SM8"/>
+                                    <constraint firstAttribute="width" constant="200" id="gbg-nJ-IJP"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uRM-NL-FJK">
+                                <rect key="frame" x="107" y="572" width="200" height="60"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Dpg-CH-ica"/>
+                                    <constraint firstAttribute="width" constant="200" id="dyq-Zu-FXe"/>
+                                </constraints>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="돌아가기">
+                                            <attributes>
+                                                <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="18" name="Galmuri11-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rrZ-7Z-E1O">
+                                <rect key="frame" x="60.5" y="466" width="293.5" height="62"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="62" id="fPD-De-xwm"/>
+                                </constraints>
                                 <attributedString key="attributedText">
                                     <fragment content="오늘도 무사히 지구를 구했어요! ">
                                         <attributes>
@@ -711,30 +739,19 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uRM-NL-FJK">
-                                <rect key="frame" x="130" y="522" width="155" height="74"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemGreenColor"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="돌아가기">
-                                            <attributes>
-                                                <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <font key="NSFont" size="18" name="Galmuri11-Bold"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
-                            </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VTK-ap-NH2" customClass="AnimationView" customModule="Lottie">
-                                <rect key="frame" x="156" y="151" width="102" height="94"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0Zx-Az-K1C"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="rrZ-7Z-E1O" firstAttribute="centerX" secondItem="ffS-9a-Bd3" secondAttribute="centerX" id="22h-zZ-hb2"/>
+                            <constraint firstItem="VTK-ap-NH2" firstAttribute="top" secondItem="0Zx-Az-K1C" secondAttribute="top" constant="50" id="C47-zJ-i4l"/>
+                            <constraint firstItem="nRF-OS-aoB" firstAttribute="top" secondItem="VTK-ap-NH2" secondAttribute="bottom" constant="26" id="Dfi-2J-MSs"/>
+                            <constraint firstItem="VTK-ap-NH2" firstAttribute="centerX" secondItem="ffS-9a-Bd3" secondAttribute="centerX" id="G2n-jN-tfg"/>
+                            <constraint firstItem="uRM-NL-FJK" firstAttribute="top" secondItem="rrZ-7Z-E1O" secondAttribute="bottom" constant="44" id="TpF-KI-WJQ"/>
+                            <constraint firstAttribute="bottom" secondItem="rrZ-7Z-E1O" secondAttribute="bottom" constant="368" id="by6-xb-NUo"/>
+                            <constraint firstItem="uRM-NL-FJK" firstAttribute="centerX" secondItem="ffS-9a-Bd3" secondAttribute="centerX" id="ikB-w5-XKm"/>
+                            <constraint firstItem="nRF-OS-aoB" firstAttribute="centerX" secondItem="ffS-9a-Bd3" secondAttribute="centerX" id="mJd-w3-oZh"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="mI1-gv-Fge"/>
                     <connections>
@@ -745,7 +762,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hey-np-AdA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1512" y="-1608"/>
+            <point key="canvasLocation" x="1511.5942028985507" y="-1608.4821428571429"/>
         </scene>
         <!--Recycle View Controller-->
         <scene sceneID="VKV-wG-yhp">

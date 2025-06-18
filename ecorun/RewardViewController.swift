@@ -18,6 +18,8 @@ class RewardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.hidesBackButton = true
+        btnBackToMain.layer.cornerRadius = 10
+        btnBackToMain.clipsToBounds = true
         setupLottie()
 
         // 1) 값을 보장하라
@@ -35,7 +37,7 @@ class RewardViewController: UIViewController {
 
         // 5) 단계 변경 시 축하 Alert
         if currentStage > previousStage {
-            let message = "🎉 새싹 단계가 \(previousStage)단계에서 \(currentStage)단계로 성장했어요!"
+            let message = "🎉 새싹 단계가\n\(previousStage)단계에서 \(currentStage)단계로\n쑥쑥 성장했어요!"
             let alert = UIAlertController(title: nil,
                                           message: message,
                                           preferredStyle: .alert)

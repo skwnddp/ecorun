@@ -30,6 +30,7 @@
 		0448B98F2E019FAE00E359E6 /* walk.json in Resources */ = {isa = PBXBuildFile; fileRef = 0448B9892E019FAE00E359E6 /* walk.json */; };
 		0448B9902E019FAE00E359E6 /* bike.json in Resources */ = {isa = PBXBuildFile; fileRef = 0448B98A2E019FAE00E359E6 /* bike.json */; };
 		04923D3F2E01CB5C00F2C499 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 04923D3E2E01CB5C00F2C499 /* Lottie */; };
+		04923D412E02CC2C00F2C499 /* SpeechBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04923D402E02CC2C00F2C499 /* SpeechBubbleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		0448B9882E019FAE00E359E6 /* cat.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cat.json; sourceTree = "<group>"; };
 		0448B9892E019FAE00E359E6 /* walk.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = walk.json; sourceTree = "<group>"; };
 		0448B98A2E019FAE00E359E6 /* bike.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bike.json; sourceTree = "<group>"; };
+		04923D402E02CC2C00F2C499 /* SpeechBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechBubbleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				0448B9722E01367500E359E6 /* InfoViewController.swift */,
 				0448B9772E01592900E359E6 /* RewardViewController.swift */,
 				0448B9802E0182A000E359E6 /* MyCustomFonts.swift */,
+				04923D402E02CC2C00F2C499 /* SpeechBubbleView.swift */,
 			);
 			path = ecorun;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 			files = (
 				0448B94D2E0125F200E359E6 /* AppDelegate.swift in Sources */,
 				0448B9812E0182A000E359E6 /* MyCustomFonts.swift in Sources */,
+				04923D412E02CC2C00F2C499 /* SpeechBubbleView.swift in Sources */,
 				0448B9652E0134D000E359E6 /* CarbonSource.swift in Sources */,
 				0448B9732E01367500E359E6 /* InfoViewController.swift in Sources */,
 				0448B94F2E0125F200E359E6 /* SceneDelegate.swift in Sources */,
