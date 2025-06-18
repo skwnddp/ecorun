@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040A6E702E0301AC000EB0FC /* BikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448B96E2E01360700E359E6 /* BikeViewController.swift */; };
 		0448B94D2E0125F200E359E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448B94C2E0125F200E359E6 /* AppDelegate.swift */; };
 		0448B94F2E0125F200E359E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448B94E2E0125F200E359E6 /* SceneDelegate.swift */; };
 		0448B9542E0125F200E359E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0448B9522E0125F200E359E6 /* Main.storyboard */; };
@@ -17,7 +18,6 @@
 		0448B9672E01350600E359E6 /* CarbonStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448B9662E01350600E359E6 /* CarbonStorage.swift */; };
 		0448B9692E0135C500E359E6 /* WalkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448B9682E0135C500E359E6 /* WalkViewController.swift */; };
 		0448B96B2E0135D700E359E6 /* RunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448B96A2E0135D700E359E6 /* RunViewController.swift */; };
-		0448B96F2E01360700E359E6 /* BikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448B96E2E01360700E359E6 /* BikeViewController.swift */; };
 		0448B9712E01365800E359E6 /* RecycleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448B9702E01365800E359E6 /* RecycleViewController.swift */; };
 		0448B9732E01367500E359E6 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448B9722E01367500E359E6 /* InfoViewController.swift */; };
 		0448B9782E01592900E359E6 /* RewardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448B9772E01592900E359E6 /* RewardViewController.swift */; };
@@ -239,12 +239,12 @@
 				0448B9652E0134D000E359E6 /* CarbonSource.swift in Sources */,
 				0448B9732E01367500E359E6 /* InfoViewController.swift in Sources */,
 				0448B94F2E0125F200E359E6 /* SceneDelegate.swift in Sources */,
-				0448B96F2E01360700E359E6 /* BikeViewController.swift in Sources */,
 				0448B9782E01592900E359E6 /* RewardViewController.swift in Sources */,
 				0448B9672E01350600E359E6 /* CarbonStorage.swift in Sources */,
 				0448B9612E01329D00E359E6 /* HomeViewController.swift in Sources */,
 				0448B96B2E0135D700E359E6 /* RunViewController.swift in Sources */,
 				045699BE2E02EA13007BCAB8 /* MovementSimulator.swift in Sources */,
+				040A6E702E0301AC000EB0FC /* BikeViewController.swift in Sources */,
 				0448B9692E0135C500E359E6 /* WalkViewController.swift in Sources */,
 				0448B9712E01365800E359E6 /* RecycleViewController.swift in Sources */,
 			);

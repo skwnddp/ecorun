@@ -28,7 +28,7 @@ public class MovementSimulator {
     /// 현재 모드 (외부에서 바꿀 수 있음)
     public var mode: MovementMode = .walk
 
-    public init(startAt coord: CLLocationCoordinate2D) {
+    public init(startAt coord: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 37.5823639, longitude: 127.0104167)) {
         self.coordinate = coord
     }
 

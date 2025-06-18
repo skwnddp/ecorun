@@ -95,7 +95,7 @@ class WalkViewController: UIViewController {
         stopButton.isHidden = true
         pauseButton.isHidden = true
         lottie.isHidden = true
-        
+
         [startButton, pauseButton, stopButton].forEach { button in
             button!.layer.cornerRadius = 20
             button?.clipsToBounds = true
@@ -106,9 +106,13 @@ class WalkViewController: UIViewController {
         guideLeftLabel.text = "0m"
         updateGuideLabels()
 
-        mapView.showsUserLocation = true
+        // 실제 위치 표시 비활성화
+        mapView.showsUserLocation = false
+        // 트래킹 모드 완전 끄기
+        mapView.setUserTrackingMode(.none, animated: false)
         mapView.delegate = self
     }
+
 
     private func configureLocation() {
         locationManager.delegate = self
@@ -207,7 +211,11 @@ class WalkViewController: UIViewController {
 
         startTimer()
         updateStats()
-        startLocationUpdates()
+//        startLocationUpdates()
+        
+        let zoomSpan = MKCoordinateSpan(latitudeDelta: 0.0005, longitudeDelta: 0.0005)
+        let zoomRegion = MKCoordinateRegion(center: simulator.coordinate, span: zoomSpan)
+        mapView.setRegion(zoomRegion, animated: true)
         
         simulator.mode = .walk
         let next = simulator.step()
