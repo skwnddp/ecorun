@@ -20,8 +20,16 @@
 		0448B96F2E01360700E359E6 /* BikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448B96E2E01360700E359E6 /* BikeViewController.swift */; };
 		0448B9712E01365800E359E6 /* RecycleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448B9702E01365800E359E6 /* RecycleViewController.swift */; };
 		0448B9732E01367500E359E6 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448B9722E01367500E359E6 /* InfoViewController.swift */; };
-		0448B9762E01493300E359E6 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 0448B9752E01493300E359E6 /* Lottie */; };
 		0448B9782E01592900E359E6 /* RewardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448B9772E01592900E359E6 /* RewardViewController.swift */; };
+		0448B9812E0182A000E359E6 /* MyCustomFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448B9802E0182A000E359E6 /* MyCustomFonts.swift */; };
+		0448B9832E0185E400E359E6 /* Galmuri11-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0448B9822E0185E400E359E6 /* Galmuri11-Bold.ttf */; };
+		0448B98B2E019FAE00E359E6 /* run.json in Resources */ = {isa = PBXBuildFile; fileRef = 0448B9852E019FAD00E359E6 /* run.json */; };
+		0448B98C2E019FAE00E359E6 /* recycle.json in Resources */ = {isa = PBXBuildFile; fileRef = 0448B9862E019FAD00E359E6 /* recycle.json */; };
+		0448B98D2E019FAE00E359E6 /* reward.json in Resources */ = {isa = PBXBuildFile; fileRef = 0448B9872E019FAE00E359E6 /* reward.json */; };
+		0448B98E2E019FAE00E359E6 /* cat.json in Resources */ = {isa = PBXBuildFile; fileRef = 0448B9882E019FAE00E359E6 /* cat.json */; };
+		0448B98F2E019FAE00E359E6 /* walk.json in Resources */ = {isa = PBXBuildFile; fileRef = 0448B9892E019FAE00E359E6 /* walk.json */; };
+		0448B9902E019FAE00E359E6 /* bike.json in Resources */ = {isa = PBXBuildFile; fileRef = 0448B98A2E019FAE00E359E6 /* bike.json */; };
+		04923D3F2E01CB5C00F2C499 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 04923D3E2E01CB5C00F2C499 /* Lottie */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +49,14 @@
 		0448B9702E01365800E359E6 /* RecycleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecycleViewController.swift; sourceTree = "<group>"; };
 		0448B9722E01367500E359E6 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		0448B9772E01592900E359E6 /* RewardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardViewController.swift; sourceTree = "<group>"; };
+		0448B9802E0182A000E359E6 /* MyCustomFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomFonts.swift; sourceTree = "<group>"; };
+		0448B9822E0185E400E359E6 /* Galmuri11-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Galmuri11-Bold.ttf"; sourceTree = "<group>"; };
+		0448B9852E019FAD00E359E6 /* run.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = run.json; sourceTree = "<group>"; };
+		0448B9862E019FAD00E359E6 /* recycle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recycle.json; sourceTree = "<group>"; };
+		0448B9872E019FAE00E359E6 /* reward.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = reward.json; sourceTree = "<group>"; };
+		0448B9882E019FAE00E359E6 /* cat.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cat.json; sourceTree = "<group>"; };
+		0448B9892E019FAE00E359E6 /* walk.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = walk.json; sourceTree = "<group>"; };
+		0448B98A2E019FAE00E359E6 /* bike.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bike.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0448B9762E01493300E359E6 /* Lottie in Frameworks */,
+				04923D3F2E01CB5C00F2C499 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +76,7 @@
 			children = (
 				0448B94B2E0125F200E359E6 /* ecorun */,
 				0448B94A2E0125F200E359E6 /* Products */,
+				04923D3D2E01CB1600F2C499 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,6 +91,8 @@
 		0448B94B2E0125F200E359E6 /* ecorun */ = {
 			isa = PBXGroup;
 			children = (
+				0448B9842E019E4600E359E6 /* Lottie */,
+				0448B97E2E01822E00E359E6 /* Fonts */,
 				0448B94C2E0125F200E359E6 /* AppDelegate.swift */,
 				0448B9682E0135C500E359E6 /* WalkViewController.swift */,
 				0448B94E2E0125F200E359E6 /* SceneDelegate.swift */,
@@ -89,8 +108,37 @@
 				0448B9702E01365800E359E6 /* RecycleViewController.swift */,
 				0448B9722E01367500E359E6 /* InfoViewController.swift */,
 				0448B9772E01592900E359E6 /* RewardViewController.swift */,
+				0448B9802E0182A000E359E6 /* MyCustomFonts.swift */,
 			);
 			path = ecorun;
+			sourceTree = "<group>";
+		};
+		0448B97E2E01822E00E359E6 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				0448B9822E0185E400E359E6 /* Galmuri11-Bold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		0448B9842E019E4600E359E6 /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				0448B98A2E019FAE00E359E6 /* bike.json */,
+				0448B9882E019FAE00E359E6 /* cat.json */,
+				0448B9862E019FAD00E359E6 /* recycle.json */,
+				0448B9872E019FAE00E359E6 /* reward.json */,
+				0448B9852E019FAD00E359E6 /* run.json */,
+				0448B9892E019FAE00E359E6 /* walk.json */,
+			);
+			path = Lottie;
+			sourceTree = "<group>";
+		};
+		04923D3D2E01CB1600F2C499 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -110,7 +158,7 @@
 			);
 			name = ecorun;
 			packageProductDependencies = (
-				0448B9752E01493300E359E6 /* Lottie */,
+				04923D3E2E01CB5C00F2C499 /* Lottie */,
 			);
 			productName = ecorun;
 			productReference = 0448B9492E0125F200E359E6 /* ecorun.app */;
@@ -156,9 +204,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0448B98E2E019FAE00E359E6 /* cat.json in Resources */,
 				0448B9592E0125F300E359E6 /* LaunchScreen.storyboard in Resources */,
+				0448B98F2E019FAE00E359E6 /* walk.json in Resources */,
 				0448B9562E0125F300E359E6 /* Assets.xcassets in Resources */,
+				0448B9902E019FAE00E359E6 /* bike.json in Resources */,
 				0448B9542E0125F200E359E6 /* Main.storyboard in Resources */,
+				0448B98C2E019FAE00E359E6 /* recycle.json in Resources */,
+				0448B98D2E019FAE00E359E6 /* reward.json in Resources */,
+				0448B98B2E019FAE00E359E6 /* run.json in Resources */,
+				0448B9832E0185E400E359E6 /* Galmuri11-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0448B94D2E0125F200E359E6 /* AppDelegate.swift in Sources */,
+				0448B9812E0182A000E359E6 /* MyCustomFonts.swift in Sources */,
 				0448B9652E0134D000E359E6 /* CarbonSource.swift in Sources */,
 				0448B9732E01367500E359E6 /* InfoViewController.swift in Sources */,
 				0448B94F2E0125F200E359E6 /* SceneDelegate.swift in Sources */,
@@ -392,7 +448,7 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0448B9752E01493300E359E6 /* Lottie */ = {
+		04923D3E2E01CB5C00F2C499 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0448B9742E01493300E359E6 /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
