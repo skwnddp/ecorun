@@ -22,9 +22,9 @@ class InfoViewController: UIViewController {
         navigationItem.title = "내 정보"
 
         // Galmuri11-Bold 폰트
-        let titleFont = UIFont(name: "Galmuri11-Bold", size: 32)!
-        let guideFont = UIFont(name: "Galmuri11-Bold", size: 20)!
-        let tipFont   = UIFont(name: "Galmuri11-Bold", size: 16)!
+        let titleFont = UIFont(name: "Galmuri11-Bold", size: 28)!
+        let guideFont = UIFont(name: "Galmuri11-Bold", size: 16)!
+        let tipFont   = UIFont(name: "Galmuri11-Bold", size: 12)!
 
         tvTitle.attributedText = NSAttributedString(
             string: "🌿 새싹 성장 단계",
@@ -51,9 +51,6 @@ class InfoViewController: UIViewController {
                 .foregroundColor: UIColor.darkGray
             ]
         )
-        
-        let total = CarbonStorage.shared.totalCarbon()
-        stageProgressLabel.text = "나의 성장은... \(total)/1000"
 
         tvTip.attributedText = NSAttributedString(
             string: """
@@ -107,5 +104,7 @@ class InfoViewController: UIViewController {
 
         let progress = Float(min(total, 1000)) / 1000.0
         progressCarbon.setProgress(progress, animated: true)
+        
+        stageProgressLabel.text = "나의 성장은... \(total)/1000"
     }
 }

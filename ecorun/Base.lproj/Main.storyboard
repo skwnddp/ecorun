@@ -447,7 +447,7 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="om9-cS-Pe3">
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="om9-cS-Pe3">
                                         <rect key="frame" x="0.0" y="192" width="394" height="10"/>
                                         <color key="tintColor" systemColor="systemGreenColor"/>
                                         <constraints>
@@ -644,7 +644,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRF-OS-aoB">
-                                <rect key="frame" x="130" y="276" width="154" height="28"/>
+                                <rect key="frame" x="141.5" y="276" width="131.5" height="28"/>
                                 <attributedString key="attributedText">
                                     <fragment content="리워드 메시지">
                                         <attributes>
@@ -683,7 +683,7 @@
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rrZ-7Z-E1O">
-                                <rect key="frame" x="60.5" y="412" width="293.5" height="62"/>
+                                <rect key="frame" x="82.5" y="412" width="249.5" height="62"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="62" id="fPD-De-xwm"/>
                                 </constraints>
@@ -941,7 +941,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G8C-hy-EAA">
-                                        <rect key="frame" x="95" y="139.5" width="140" height="16.5"/>
+                                        <rect key="frame" x="104.5" y="139.5" width="121.5" height="16.5"/>
                                         <attributedString key="attributedText">
                                             <fragment content="&lt;종류별 탄소량 안내&gt;">
                                                 <attributes>
@@ -1005,7 +1005,7 @@
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Vz-eJ-vOc">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Vz-eJ-vOc">
                                         <rect key="frame" x="0.0" y="78" width="194" height="28"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Info 정보 레이블">
@@ -1331,7 +1331,7 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="qjh-MX-YR6">
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qjh-MX-YR6">
                                         <rect key="frame" x="0.0" y="192" width="394" height="10"/>
                                         <color key="tintColor" systemColor="systemGreenColor"/>
                                         <constraints>
@@ -1397,11 +1397,11 @@
                                 </constraints>
                             </stackView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gHw-ZU-fmn" customClass="AnimationView" customModule="Lottie">
-                                <rect key="frame" x="107" y="650" width="200" height="200"/>
+                                <rect key="frame" x="132" y="650" width="150" height="150"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="Kj6-2a-1rm"/>
-                                    <constraint firstAttribute="height" constant="200" id="TPI-NM-zfR"/>
+                                    <constraint firstAttribute="width" constant="150" id="Kj6-2a-1rm"/>
+                                    <constraint firstAttribute="height" constant="150" id="TPI-NM-zfR"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="walk"/>
@@ -1708,7 +1708,7 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="VLQ-Ga-1PR">
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="VLQ-Ga-1PR">
                                         <rect key="frame" x="0.0" y="192" width="394" height="10"/>
                                         <color key="tintColor" systemColor="systemGreenColor"/>
                                         <constraints>
@@ -1774,11 +1774,11 @@
                                 </constraints>
                             </stackView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="su5-Xw-KKT" customClass="AnimationView" customModule="Lottie">
-                                <rect key="frame" x="127" y="650" width="160" height="160"/>
+                                <rect key="frame" x="107" y="650" width="200" height="200"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="160" id="DQ4-Yr-u97"/>
-                                    <constraint firstAttribute="width" constant="160" id="GiP-UM-m8G"/>
+                                    <constraint firstAttribute="height" constant="200" id="DQ4-Yr-u97"/>
+                                    <constraint firstAttribute="width" constant="200" id="GiP-UM-m8G"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="walk"/>
