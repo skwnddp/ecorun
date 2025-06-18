@@ -1,5 +1,5 @@
 //
-//  InfoViewController  InfoViewController  InfoViewController InfoViewController  InfoViewController  InfoViewController  InfoViewController  InfoViewController  InfoViewController  InfoViewController  InfoViewController.swift
+//  InfoViewController.swift
 //  ecorun
 //
 //  Created by mac on 2025/06/16.

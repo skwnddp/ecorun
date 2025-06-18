@@ -13,10 +13,32 @@ class WalkViewController: UIViewController {
     @IBOutlet weak var stopButton: UIButton!
     @IBOutlet weak var progressView: UIProgressView!
     @IBOutlet weak var personMarker: UIImageView!
-    @IBOutlet weak var lottieWalker: AnimationView!
+    @IBOutlet weak var lottie: AnimationView!
     @IBOutlet weak var guideLeftLabel: UILabel!
     @IBOutlet weak var guideCenterLabel: UILabel!
     @IBOutlet weak var guideRightLabel: UILabel!
+    
+    // 현재 위치
+    @IBAction func centerOnUserTapped(_ sender: UIButton) {
+        guard CLLocationCoordinate2DIsValid(mapView.userLocation.coordinate) else { return }
+        mapView.setCenter(mapView.userLocation.coordinate, animated: true)
+    }
+
+    // 줌 인
+    @IBAction func zoomInTapped(_ sender: UIButton) {
+        var region = mapView.region
+        region.span.latitudeDelta  /= 2
+        region.span.longitudeDelta /= 2
+        mapView.setRegion(region, animated: true)
+    }
+
+    // 줌 아웃
+    @IBAction func zoomOutTapped(_ sender: UIButton) {
+        var region = mapView.region
+        region.span.latitudeDelta  = min(region.span.latitudeDelta * 2, 180)
+        region.span.longitudeDelta = min(region.span.longitudeDelta * 2, 180)
+        mapView.setRegion(region, animated: true)
+    }
 
     // MARK: - Properties
     private let locationManager = CLLocationManager()
@@ -32,8 +54,10 @@ class WalkViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupLottie()
         configureUI()
         configureLocation()
+        self.hidesBottomBarWhenPushed = true
     }
 
     override func viewDidLayoutSubviews() {
@@ -47,8 +71,13 @@ class WalkViewController: UIViewController {
         stopButton.isHidden = true
         pauseButton.isHidden = true
         timerLabel.isHidden = true
-        lottieWalker.isHidden = true
+        lottie.isHidden = true
         personMarker.isHidden = true
+        
+        [startButton, pauseButton, stopButton].forEach { button in
+            button!.layer.cornerRadius = 20
+            button?.clipsToBounds = true
+        }
 
         progressView.progress = 0
 
@@ -72,20 +101,49 @@ class WalkViewController: UIViewController {
 
     @IBAction func pauseTapped(_ sender: UIButton) {
         isPaused.toggle()
+
         if isPaused {
+            // 일시정지 상태
             pauseTracking()
-            pauseButton.setTitle("계속할게요", for: .normal)
-            lottieWalker.pause()
+            lottie.pause()
+            
+            let text = "계속 할게요"
+            if let old = sender.attributedTitle(for: .normal) {
+                let updated = NSMutableAttributedString(attributedString: old)
+                updated.mutableString.setString(text)
+                sender.setAttributedTitle(updated, for: .normal)
+            } else {
+                sender.setAttributedTitle(NSAttributedString(string: text), for: .normal)
+            }
+            sender.backgroundColor = .systemOrange
+            
         } else {
+            // 재개 상태
             resumeTracking()
-            pauseButton.setTitle("잠깐 쉴게요", for: .normal)
-            lottieWalker.play()
+            lottie.play()
+            
+            let text = "잠시 쉴게요"
+            if let old = sender.attributedTitle(for: .normal) {
+                let updated = NSMutableAttributedString(attributedString: old)
+                updated.mutableString.setString(text)
+                sender.setAttributedTitle(updated, for: .normal)
+            } else {
+                sender.setAttributedTitle(NSAttributedString(string: text), for: .normal)
+            }
+            sender.backgroundColor = .systemBlue
         }
     }
 
     @IBAction func stopTapped(_ sender: UIButton) {
         endSession()
-        
+    }
+    
+    private func setupLottie() {
+        lottie.animation = Animation.named("walk")
+        lottie.backgroundColor = .clear
+        lottie.isOpaque = false
+        lottie.loopMode  = .loop
+        lottie.play()
     }
 
     // MARK: - Alerts
@@ -119,9 +177,9 @@ class WalkViewController: UIViewController {
         stopButton.isHidden = false
         pauseButton.isHidden = false
         timerLabel.isHidden = false
-        lottieWalker.isHidden = false
+        lottie.isHidden = false
         personMarker.isHidden = false
-        lottieWalker.play()
+        lottie.play()
 
         progressView.progress = 0
         updateGuideLabels()
@@ -144,7 +202,7 @@ class WalkViewController: UIViewController {
     private func endSession() {
         // 1) 트래킹·애니메이션 멈추기
         pauseTracking()
-        lottieWalker.stop()
+        lottie.stop()
 
         // 2) 결과 계산
         let distanceMeters = Int(totalDistance)
