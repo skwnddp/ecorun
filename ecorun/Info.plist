@@ -2,8 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Location When In Use Usage Description</key>
-	<string></string>
+    <key>UIAppFonts</key>
+    <array>
+      <string>Galmuri11-Bold.ttf</string>
+    </array>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>이동 거리 측정을 위해서 권한이 필요해요</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
