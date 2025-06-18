@@ -12,7 +12,6 @@ class WalkViewController: UIViewController {
     @IBOutlet weak var pauseButton: UIButton!
     @IBOutlet weak var stopButton: UIButton!
     @IBOutlet weak var progressView: UIProgressView!
-    @IBOutlet weak var personMarker: UIImageView!
     @IBOutlet weak var lottie: AnimationView!
     @IBOutlet weak var guideLeftLabel: UILabel!
     @IBOutlet weak var guideCenterLabel: UILabel!
@@ -70,16 +69,14 @@ class WalkViewController: UIViewController {
     private func configureUI() {
         stopButton.isHidden = true
         pauseButton.isHidden = true
-        timerLabel.isHidden = true
         lottie.isHidden = true
-        personMarker.isHidden = true
         
         [startButton, pauseButton, stopButton].forEach { button in
             button!.layer.cornerRadius = 20
             button?.clipsToBounds = true
         }
 
-        progressView.progress = 0
+        progressView.progress = 10
 
         guideLeftLabel.text = "0m"
         updateGuideLabels()
@@ -176,9 +173,7 @@ class WalkViewController: UIViewController {
         startButton.isHidden = true
         stopButton.isHidden = false
         pauseButton.isHidden = false
-        timerLabel.isHidden = false
         lottie.isHidden = false
-        personMarker.isHidden = false
         lottie.play()
 
         progressView.progress = 0
@@ -233,6 +228,12 @@ class WalkViewController: UIViewController {
         trackingTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
             self.elapsedSeconds += 1
             self.timerLabel.text = self.formattedTime(self.elapsedSeconds)
+            
+            // — 테스트 시뮬레이션: 초당 1m 이동했다고 가정
+            self.totalDistance += 1
+
+            // distance 기반으로 progressView 업데이트
+            self.updateStats()
         }
     }
 
@@ -283,7 +284,6 @@ extension WalkViewController: CLLocationManagerDelegate {
         progressView.setProgress(prog, animated: true)
         // marker position
         let x = progressView.frame.minX + CGFloat(prog) * progressWidth
-        personMarker.center.x = x
     }
 }
 

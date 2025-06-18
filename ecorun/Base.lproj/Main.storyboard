@@ -274,53 +274,166 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3fD-ll-UGU">
-                                <rect key="frame" x="0.0" y="357" width="414" height="275"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lid-gH-D6q">
+                                <rect key="frame" x="10" y="108" width="394" height="240"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czC-v4-zcu">
-                                        <rect key="frame" x="48" y="58" width="312.5" height="50"/>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="SJ5-gA-4kU">
+                                        <rect key="frame" x="2" y="2" width="390" height="236"/>
+                                    </mapView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LM3-Ob-z4H">
+                                        <rect key="frame" x="354" y="10" width="30" height="38.5"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="📍">
+                                                    <attributes>
+                                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <font key="NSFont" size="24" name=".AppleColorEmojiUI"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                        <connections>
+                                            <action selector="centerOnUserTapped:" destination="TuA-QY-LN4" eventType="touchUpInside" id="ifw-5r-YK9"/>
+                                        </connections>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="MYx-e5-4ep">
+                                        <rect key="frame" x="352" y="156" width="32" height="74"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wTl-8R-PiG">
+                                                <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="32" id="GpF-wS-bBt"/>
+                                                    <constraint firstAttribute="height" constant="32" id="inl-9z-sVS"/>
+                                                </constraints>
+                                                <state key="normal">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="➕">
+                                                            <attributes>
+                                                                <font key="NSFont" size="24" name=".AppleColorEmojiUI"/>
+                                                                <font key="NSOriginalFont" metaFont="system" size="36"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                </state>
+                                                <connections>
+                                                    <action selector="zoomInTapped:" destination="TuA-QY-LN4" eventType="touchUpInside" id="hcm-if-AQa"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bh6-ED-odB">
+                                                <rect key="frame" x="0.0" y="42" width="32" height="32"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="32" id="rio-ma-XAg"/>
+                                                    <constraint firstAttribute="height" constant="32" id="u0J-ry-dx9"/>
+                                                </constraints>
+                                                <state key="normal">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="➖">
+                                                            <attributes>
+                                                                <font key="NSFont" size="24" name=".AppleColorEmojiUI"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                </state>
+                                                <connections>
+                                                    <action selector="zoomOutTapped:" destination="TuA-QY-LN4" eventType="touchUpInside" id="r3A-vH-QIC"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="MYx-e5-4ep" secondAttribute="trailing" constant="10" id="2Xu-jw-TZb"/>
+                                    <constraint firstItem="SJ5-gA-4kU" firstAttribute="top" secondItem="lid-gH-D6q" secondAttribute="top" constant="2" id="5ol-Qc-LbR"/>
+                                    <constraint firstAttribute="trailing" secondItem="LM3-Ob-z4H" secondAttribute="trailing" constant="10" id="GVi-eM-rTK"/>
+                                    <constraint firstItem="SJ5-gA-4kU" firstAttribute="leading" secondItem="lid-gH-D6q" secondAttribute="leading" constant="2" id="H29-Qh-eXZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="SJ5-gA-4kU" secondAttribute="bottom" constant="2" id="N08-Bt-J1j"/>
+                                    <constraint firstAttribute="height" constant="240" id="Yb3-sd-eGs"/>
+                                    <constraint firstAttribute="bottom" secondItem="MYx-e5-4ep" secondAttribute="bottom" constant="10" id="c9P-Wr-pLn"/>
+                                    <constraint firstAttribute="trailing" secondItem="SJ5-gA-4kU" secondAttribute="trailing" constant="2" id="dq1-bL-qy5"/>
+                                    <constraint firstItem="LM3-Ob-z4H" firstAttribute="top" secondItem="lid-gH-D6q" secondAttribute="top" constant="10" id="wP2-HZ-sGL"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="W7o-VS-jSe">
+                                <rect key="frame" x="10" y="358" width="394" height="231.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="411-Wv-wbe">
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="32"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="I5o-wL-occ"/>
+                                            <constraint firstAttribute="height" constant="32" id="aFh-Sy-Hq5"/>
                                         </constraints>
                                         <attributedString key="attributedText">
-                                            <fragment content="ℹ️">
+                                            <fragment content="🚶🏻">
                                                 <attributes>
-                                                    <font key="NSFont" metaFont="system" size="14"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="36" name="AppleColorEmoji"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                 </attributes>
                                             </fragment>
-                                            <fragment content=" 걷기는 1km당 약 200g의 탄소를 절감해요 (자가용 기준)">
+                                            <fragment content="걷기">
                                                 <attributes>
-                                                    <font key="NSFont" size="14" name="Galmuri11-Bold"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="24" name="Galmuri11-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                 </attributes>
                                             </fragment>
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qO3-rJ-ThU">
-                                        <rect key="frame" x="48" y="116" width="145.5" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czC-v4-zcu">
+                                        <rect key="frame" x="0.0" y="52" width="394" height="39.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="1Lm-Zh-JVc"/>
+                                        </constraints>
+                                        <attributedString key="attributedText">
+                                            <fragment content="ℹ️">
+                                                <attributes>
+                                                    <font key="NSFont" size="14" name="AppleColorEmoji"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content=" 걷기는 1km당 약 200g의 탄소를 절감해요 (자가용 기준)">
+                                                <attributes>
+                                                    <font key="NSFont" size="14" name="Galmuri11-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="OSg-lV-wts" userLabel="Stack DT">
+                                        <rect key="frame" x="0.0" y="111.5" width="394" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wcK-Gx-XDS">
-                                                <rect key="frame" x="0.0" y="0.0" width="94.5" height="21"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="192" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="U4M-9i-ukO"/>
+                                                </constraints>
                                                 <attributedString key="attributedText">
-                                                    <fragment content="이동 거리 :">
+                                                    <fragment content="이동 1거리 : 0m">
                                                         <attributes>
+                                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <font key="NSFont" size="18" name="Galmuri11-Bold"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                         </attributes>
                                                     </fragment>
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ta4-EG-ZqZ">
-                                                <rect key="frame" x="94.5" y="0.0" width="51" height="21"/>
+                                                <rect key="frame" x="202" y="0.0" width="192" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="vPG-Tg-fVA"/>
+                                                </constraints>
                                                 <attributedString key="attributedText">
-                                                    <fragment content="시간 :">
+                                                    <fragment content="시간 : 00:00:00">
                                                         <attributes>
                                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                             <font key="NSFont" size="18" name="Galmuri11-Bold"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                         </attributes>
                                                     </fragment>
                                                 </attributedString>
@@ -328,16 +441,21 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="om9-cS-Pe3">
-                                        <rect key="frame" x="20" y="222" width="374" height="4"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="om9-cS-Pe3">
+                                        <rect key="frame" x="0.0" y="181.5" width="394" height="10"/>
                                         <color key="tintColor" systemColor="systemGreenColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="10" id="fgC-LU-rZL"/>
+                                        </constraints>
                                     </progressView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="fillEqually" spacing="176" translatesAutoresizingMaskIntoConstraints="NO" id="qUy-q7-Cgq">
-                                        <rect key="frame" x="20" y="234" width="374.5" height="21"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qUy-q7-Cgq" userLabel="Stack LCR">
+                                        <rect key="frame" x="0.0" y="211.5" width="394" height="20"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9SK-ob-3UE">
-                                                <rect key="frame" x="0.0" y="0.0" width="7.5" height="21"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="124.5" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="Hro-U6-JIc"/>
+                                                </constraints>
                                                 <attributedString key="attributedText">
                                                     <fragment content="1">
                                                         <attributes>
@@ -350,7 +468,10 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="akF-YI-xlY">
-                                                <rect key="frame" x="183.5" y="0.0" width="7.5" height="21"/>
+                                                <rect key="frame" x="134.5" y="0.0" width="125" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="ad2-Jc-xyH"/>
+                                                </constraints>
                                                 <attributedString key="attributedText">
                                                     <fragment content="1">
                                                         <attributes>
@@ -362,7 +483,10 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Flm-TG-qsR">
-                                                <rect key="frame" x="367" y="0.0" width="7.5" height="21"/>
+                                                <rect key="frame" x="269.5" y="0.0" width="124.5" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="1Rq-6E-DCw"/>
+                                                </constraints>
                                                 <attributedString key="attributedText">
                                                     <fragment content="1">
                                                         <attributes>
@@ -376,65 +500,45 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="411-Wv-wbe">
-                                        <rect key="frame" x="180.5" y="22" width="47.5" height="28"/>
-                                        <attributedString key="attributedText">
-                                            <fragment content="걷기">
-                                                <attributes>
-                                                    <font key="NSFont" size="24" name="Galmuri11-Bold"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KKL-x2-VeI">
-                                        <rect key="frame" x="166" y="283" width="83" height="32"/>
-                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
-                                        <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="0.24142274159999999" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="시작 할게요">
-                                                    <attributes>
-                                                        <color key="NSColor" systemColor="labelColor"/>
-                                                        <font key="NSFont" size="18" name=".AppleSDGothicNeoI-Regular"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                        </state>
-                                        <connections>
-                                            <action selector="startTapped:" destination="TuA-QY-LN4" eventType="touchUpInside" id="pdy-pO-84g"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="czC-v4-zcu" firstAttribute="leading" secondItem="cGE-aN-0XJ" secondAttribute="leading" constant="48" id="6tr-c3-ht6"/>
-                                    <constraint firstAttribute="centerX" secondItem="KKL-x2-VeI" secondAttribute="centerX" id="8rU-YM-Gwt"/>
-                                    <constraint firstItem="czC-v4-zcu" firstAttribute="top" secondItem="3fD-ll-UGU" secondAttribute="top" constant="58" id="9qG-Zf-rTw"/>
-                                    <constraint firstAttribute="bottom" secondItem="czC-v4-zcu" secondAttribute="bottom" constant="167" id="I9z-yx-tma"/>
-                                    <constraint firstItem="czC-v4-zcu" firstAttribute="leading" secondItem="qO3-rJ-ThU" secondAttribute="leading" id="JD0-1D-qLH"/>
-                                    <constraint firstItem="czC-v4-zcu" firstAttribute="top" secondItem="411-Wv-wbe" secondAttribute="bottom" constant="8" id="Lf4-In-1tL"/>
-                                    <constraint firstItem="czC-v4-zcu" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="qO3-rJ-ThU" secondAttribute="leading" id="M5P-rB-He2"/>
-                                    <constraint firstItem="qO3-rJ-ThU" firstAttribute="top" secondItem="czC-v4-zcu" secondAttribute="bottom" constant="8" id="MeE-tb-eaa"/>
-                                    <constraint firstItem="czC-v4-zcu" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="cGE-aN-0XJ" secondAttribute="leading" id="QT3-fC-vap"/>
-                                    <constraint firstItem="411-Wv-wbe" firstAttribute="leading" secondItem="cGE-aN-0XJ" secondAttribute="leading" constant="180.5" id="XS2-lB-adt"/>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="czC-v4-zcu" secondAttribute="trailing" id="aJm-DF-QKT"/>
-                                    <constraint firstItem="cGE-aN-0XJ" firstAttribute="trailing" secondItem="czC-v4-zcu" secondAttribute="trailing" constant="53.5" id="aW5-iX-gD5"/>
-                                    <constraint firstItem="cGE-aN-0XJ" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="czC-v4-zcu" secondAttribute="trailing" id="doM-Ja-8t9"/>
-                                    <constraint firstItem="czC-v4-zcu" firstAttribute="centerX" secondItem="411-Wv-wbe" secondAttribute="centerX" id="fCs-LS-wlr"/>
-                                    <constraint firstAttribute="trailing" secondItem="czC-v4-zcu" secondAttribute="trailing" constant="53.5" id="qBD-LZ-c4w"/>
-                                    <constraint firstItem="KKL-x2-VeI" firstAttribute="top" secondItem="3fD-ll-UGU" secondAttribute="bottom" constant="-130" id="yD2-Bv-x5V"/>
+                                    <constraint firstItem="OSg-lV-wts" firstAttribute="top" secondItem="czC-v4-zcu" secondAttribute="bottom" constant="20" id="4w8-x5-DsT"/>
+                                    <constraint firstItem="om9-cS-Pe3" firstAttribute="top" secondItem="OSg-lV-wts" secondAttribute="bottom" constant="20" id="bW1-Tb-OXE"/>
                                 </constraints>
-                                <viewLayoutGuide key="contentLayoutGuide" id="sHr-Tf-LK9"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="cGE-aN-0XJ"/>
-                            </scrollView>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="E1U-QX-vFO">
-                                <rect key="frame" x="20" y="795" width="284" height="33"/>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KKL-x2-VeI">
+                                <rect key="frame" x="107" y="733.5" width="200" height="50"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="9XJ-wj-yWv"/>
+                                    <constraint firstAttribute="width" constant="200" id="XMS-C8-tqP"/>
+                                </constraints>
+                                <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="0.24142274159999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="시작 할게요">
+                                            <attributes>
+                                                <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="18" name="Galmuri11-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <action selector="startTapped:" destination="TuA-QY-LN4" eventType="touchUpInside" id="pdy-pO-84g"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="E1U-QX-vFO" userLabel="Stack TG">
+                                <rect key="frame" x="52" y="789.5" width="310" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oc3-lp-YKF">
-                                        <rect key="frame" x="0.0" y="0.0" width="98" height="33"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="50"/>
                                         <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="Raf-uc-Bo3"/>
+                                            <constraint firstAttribute="height" constant="50" id="YEJ-Pq-nn5"/>
+                                        </constraints>
                                         <state key="normal">
                                             <attributedString key="attributedTitle">
                                                 <fragment content="잠시 쉴게요">
@@ -451,10 +555,11 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mrL-Cn-Sls">
-                                        <rect key="frame" x="106" y="0.0" width="178" height="33"/>
+                                        <rect key="frame" x="160" y="0.0" width="150" height="50"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="178" id="40r-Ze-gLt"/>
+                                            <constraint firstAttribute="width" constant="150" id="I1m-VK-wVY"/>
+                                            <constraint firstAttribute="height" constant="50" id="MCX-ov-mRu"/>
                                         </constraints>
                                         <state key="normal">
                                             <attributedString key="attributedTitle">
@@ -473,103 +578,34 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lid-gH-D6q">
-                                <rect key="frame" x="10" y="108" width="414" height="229"/>
-                                <subviews>
-                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="SJ5-gA-4kU">
-                                        <rect key="frame" x="0.0" y="0.0" width="395" height="229"/>
-                                    </mapView>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JEU-iC-bKJ">
-                                        <rect key="frame" x="334" y="10" width="70" height="209"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LM3-Ob-z4H">
-                                                <rect key="frame" x="26" y="20" width="20" height="22"/>
-                                                <state key="normal" image="mappin.circle" catalog="system">
-                                                    <attributedString key="attributedTitle"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="centerOnUserTapped:" destination="TuA-QY-LN4" eventType="touchUpInside" id="ifw-5r-YK9"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wTl-8R-PiG">
-                                                <rect key="frame" x="20" y="121" width="30" height="30"/>
-                                                <state key="normal">
-                                                    <attributedString key="attributedTitle">
-                                                        <fragment content="+">
-                                                            <attributes>
-                                                                <font key="NSFont" metaFont="system" size="15"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
-                                                </state>
-                                                <connections>
-                                                    <action selector="zoomInTapped:" destination="TuA-QY-LN4" eventType="touchUpInside" id="hcm-if-AQa"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bh6-ED-odB">
-                                                <rect key="frame" x="20" y="159" width="30" height="30"/>
-                                                <state key="normal">
-                                                    <attributedString key="attributedTitle">
-                                                        <fragment content="-">
-                                                            <attributes>
-                                                                <font key="NSFont" metaFont="system" size="15"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
-                                                </state>
-                                                <connections>
-                                                    <action selector="zoomOutTapped:" destination="TuA-QY-LN4" eventType="touchUpInside" id="r3A-vH-QIC"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="LM3-Ob-z4H" firstAttribute="centerX" secondItem="JEU-iC-bKJ" secondAttribute="centerX" id="Hsw-9Q-Pb4"/>
-                                            <constraint firstItem="Bh6-ED-odB" firstAttribute="centerX" secondItem="JEU-iC-bKJ" secondAttribute="centerX" id="YlB-Vy-dgA"/>
-                                            <constraint firstItem="wTl-8R-PiG" firstAttribute="centerX" secondItem="JEU-iC-bKJ" secondAttribute="centerX" id="qGQ-Bc-zQk"/>
-                                        </constraints>
-                                        <viewLayoutGuide key="contentLayoutGuide" id="WOj-Xj-rbc"/>
-                                        <viewLayoutGuide key="frameLayoutGuide" id="TF4-7o-Zq3"/>
-                                    </scrollView>
-                                </subviews>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lGl-nb-g3s" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="107" y="599.5" width="200" height="200"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="SJ5-gA-4kU" secondAttribute="bottom" id="FRP-Oa-Se3"/>
-                                    <constraint firstAttribute="bottom" secondItem="JEU-iC-bKJ" secondAttribute="bottom" constant="10" id="NGs-XX-81r"/>
-                                    <constraint firstItem="JEU-iC-bKJ" firstAttribute="centerY" secondItem="SJ5-gA-4kU" secondAttribute="centerY" id="PxF-1T-OJo"/>
-                                    <constraint firstAttribute="bottom" secondItem="JEU-iC-bKJ" secondAttribute="bottom" constant="10" id="gds-aU-DDh"/>
-                                    <constraint firstItem="JEU-iC-bKJ" firstAttribute="top" secondItem="lid-gH-D6q" secondAttribute="top" constant="10" id="jsX-pZ-DSv"/>
-                                    <constraint firstAttribute="trailing" secondItem="SJ5-gA-4kU" secondAttribute="trailing" id="mmi-0y-lbt"/>
-                                    <constraint firstItem="JEU-iC-bKJ" firstAttribute="top" secondItem="lid-gH-D6q" secondAttribute="top" constant="10" id="qde-O3-Laz"/>
-                                    <constraint firstItem="SJ5-gA-4kU" firstAttribute="leading" secondItem="lid-gH-D6q" secondAttribute="leading" id="qgD-AL-SYV"/>
+                                    <constraint firstAttribute="height" constant="200" id="Zel-St-F3p"/>
+                                    <constraint firstAttribute="width" constant="200" id="t8g-pa-SMu"/>
                                 </constraints>
-                            </view>
-                            <view hidden="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lGl-nb-g3s" customClass="AnimationView" customModule="Lottie">
-                                <rect key="frame" x="216" y="609" width="160" height="160"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="walk"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="iosexample1.png" translatesAutoresizingMaskIntoConstraints="NO" id="pd4-7H-9Go">
-                                <rect key="frame" x="150" y="683" width="58" height="52"/>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qwv-1I-9d8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="W7o-VS-jSe" secondAttribute="bottom" constant="300" id="0Gf-6t-j0t"/>
                             <constraint firstItem="lid-gH-D6q" firstAttribute="top" secondItem="qwv-1I-9d8" secondAttribute="top" constant="20" id="0jX-9D-tJv"/>
-                            <constraint firstItem="3fD-ll-UGU" firstAttribute="leading" secondItem="qwv-1I-9d8" secondAttribute="leading" id="3kM-Gw-SWd"/>
-                            <constraint firstItem="lid-gH-D6q" firstAttribute="trailing" secondItem="qwv-1I-9d8" secondAttribute="trailing" constant="10" id="Bh8-VJ-r8z"/>
-                            <constraint firstItem="3fD-ll-UGU" firstAttribute="top" secondItem="lid-gH-D6q" secondAttribute="bottom" constant="20" id="FqX-fP-dAO"/>
-                            <constraint firstItem="pd4-7H-9Go" firstAttribute="leading" secondItem="g4a-In-hpk" secondAttribute="leadingMargin" constant="130" id="JFk-83-Dni"/>
+                            <constraint firstItem="KKL-x2-VeI" firstAttribute="top" secondItem="W7o-VS-jSe" secondAttribute="bottom" constant="144" id="L3m-g1-fip"/>
                             <constraint firstItem="lid-gH-D6q" firstAttribute="leading" secondItem="qwv-1I-9d8" secondAttribute="leading" constant="10" id="NSy-G3-Dys"/>
-                            <constraint firstItem="lid-gH-D6q" firstAttribute="leading" secondItem="qwv-1I-9d8" secondAttribute="leading" constant="10" id="Vua-JO-UHE"/>
-                            <constraint firstAttribute="bottom" secondItem="lGl-nb-g3s" secondAttribute="bottom" constant="127" id="bUg-DW-ys5"/>
-                            <constraint firstItem="3fD-ll-UGU" firstAttribute="centerX" secondItem="g4a-In-hpk" secondAttribute="centerX" id="j64-YU-Nq3"/>
-                            <constraint firstAttribute="bottom" secondItem="3fD-ll-UGU" secondAttribute="bottom" constant="264" id="l3j-fW-c6D"/>
-                            <constraint firstItem="lGl-nb-g3s" firstAttribute="top" secondItem="g4a-In-hpk" secondAttribute="top" constant="609" id="w7G-rL-qT3"/>
+                            <constraint firstItem="W7o-VS-jSe" firstAttribute="top" secondItem="lid-gH-D6q" secondAttribute="bottom" constant="10" id="Q5f-g5-8WV"/>
+                            <constraint firstItem="E1U-QX-vFO" firstAttribute="top" secondItem="W7o-VS-jSe" secondAttribute="bottom" constant="200" id="Rey-Ce-AQ5"/>
+                            <constraint firstItem="KKL-x2-VeI" firstAttribute="centerX" secondItem="g4a-In-hpk" secondAttribute="centerX" id="dBY-si-NlP"/>
+                            <constraint firstItem="lGl-nb-g3s" firstAttribute="centerX" secondItem="g4a-In-hpk" secondAttribute="centerX" id="edy-Sw-6y0"/>
+                            <constraint firstItem="qwv-1I-9d8" firstAttribute="trailing" secondItem="W7o-VS-jSe" secondAttribute="trailing" constant="10" id="f9Z-Tx-JJY"/>
+                            <constraint firstItem="qwv-1I-9d8" firstAttribute="trailing" secondItem="lid-gH-D6q" secondAttribute="trailing" constant="10" id="kQK-ia-elx"/>
+                            <constraint firstItem="E1U-QX-vFO" firstAttribute="centerX" secondItem="g4a-In-hpk" secondAttribute="centerX" id="mBK-FS-wuu"/>
+                            <constraint firstItem="lGl-nb-g3s" firstAttribute="top" secondItem="W7o-VS-jSe" secondAttribute="bottom" constant="10" id="sWl-nB-rLu"/>
+                            <constraint firstItem="W7o-VS-jSe" firstAttribute="leading" secondItem="qwv-1I-9d8" secondAttribute="leading" constant="10" id="w7W-k2-0Nn"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="0yb-Ti-My4"/>
@@ -581,7 +617,6 @@
                         <outlet property="lottie" destination="lGl-nb-g3s" id="IRL-nH-d6S"/>
                         <outlet property="mapView" destination="SJ5-gA-4kU" id="dzp-WZ-nz9"/>
                         <outlet property="pauseButton" destination="oc3-lp-YKF" id="zvX-PV-ZA5"/>
-                        <outlet property="personMarker" destination="pd4-7H-9Go" id="UAi-nJ-VNO"/>
                         <outlet property="progressView" destination="om9-cS-Pe3" id="CMs-SF-cIZ"/>
                         <outlet property="startButton" destination="KKL-x2-VeI" id="LX4-Vf-WiH"/>
                         <outlet property="stopButton" destination="mrL-Cn-Sls" id="Khz-Qs-TbB"/>
@@ -1028,12 +1063,7 @@
         <segue reference="bJo-kk-LsN"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="iosexample1.png" width="251" height="450"/>
-        <image name="mappin.circle" catalog="system" width="128" height="121"/>
         <image name="square.and.arrow.up.on.square" catalog="system" width="117" height="128"/>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
