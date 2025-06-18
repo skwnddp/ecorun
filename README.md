@@ -13,6 +13,7 @@ IOS 정책상 실제 GPS 대신 시뮬레이션을 통해 환경 제약 없이
 | **리워드 화면**       | 목표 달성 시 리워드 화면으로 이동, 절감량 확인                      |
 | **맵 제어**         | `MKMapView` 사용, 한성대 위치 기반으로 줌 인, 줌 아웃, 내 위치 이동 버튼 지원   |
 | **Lottie 애니메이션** | 로티 애니메이션 재생으로 귀엽고 시각적인 재미 제공                        |
+
 ---
 ## 📸 스크린샷
 <p align="center">
@@ -25,7 +26,7 @@ IOS 정책상 실제 GPS 대신 시뮬레이션을 통해 환경 제약 없이
   <img src="https://github.com/user-attachments/assets/b1080de8-ee62-4dd5-bef9-4fdb602120f2" width="200"/>
   <img src="https://github.com/user-attachments/assets/ab37db1c-f403-41e2-b8e5-9033f3a2b2ff" width="200"/>
 </p>
----
+
 ## 🗂 프로젝트 구조
 
 ```text
