@@ -52,8 +52,8 @@ class InfoViewController: UIViewController {
             ]
         )
         
-        let stage = CarbonStorage.shared.stage(for: CarbonStorage.shared.totalCarbon())
-        stageProgressLabel.text = "나의 성장은... \(stage)/1000"
+        let total = CarbonStorage.shared.totalCarbon()
+        stageProgressLabel.text = "나의 성장은... \(total)/1000"
 
         tvTip.attributedText = NSAttributedString(
             string: """

@@ -16,11 +16,20 @@ class WalkViewController: UIViewController {
     @IBOutlet weak var guideLeftLabel: UILabel!
     @IBOutlet weak var guideCenterLabel: UILabel!
     @IBOutlet weak var guideRightLabel: UILabel!
+    @IBOutlet weak var centerButton: UIButton!
+    @IBOutlet weak var zoomInButton: UIButton!
+    @IBOutlet weak var zoomOutButton: UIButton!
     
     // 현재 위치
     @IBAction func centerOnUserTapped(_ sender: UIButton) {
-        guard CLLocationCoordinate2DIsValid(mapView.userLocation.coordinate) else { return }
-        mapView.setCenter(mapView.userLocation.coordinate, animated: true)
+//        guard CLLocationCoordinate2DIsValid(mapView.userLocation.coordinate) else { return }
+//        mapView.setCenter(mapView.userLocation.coordinate, animated: true)
+        
+        // 항상 한성대로 센터
+        let hansungUniv = CLLocationCoordinate2D(latitude: 37.5823639, longitude: 127.0104167)
+        let span = MKCoordinateSpan(latitudeDelta: 0.001, longitudeDelta: 0.001)
+        let region = MKCoordinateRegion(center: hansungUniv, span: span)
+        mapView.setRegion(region, animated: true)
     }
 
     // 줌 인
@@ -49,6 +58,7 @@ class WalkViewController: UIViewController {
     private var firstFix = true
     private var maxDistance: CLLocationDistance = 1000
     private var progressWidth: CGFloat = 0
+    private var simulator: MovementSimulator!
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -57,12 +67,27 @@ class WalkViewController: UIViewController {
         configureUI()
         configureLocation()
         self.hidesBottomBarWhenPushed = true
+        // 시뮬레이터 시작 위치 설정
+        
+        // 한성대 좌표
+        let hansungUniv = CLLocationCoordinate2D(latitude: 37.5823639, longitude: 127.0104167)
+        simulator = MovementSimulator(startAt: hansungUniv)
+        
+        // 실제 LA 위치 대신 “현위치”를 한성대에 표시
+        mapView.showsUserLocation = false
+        let fakeUser = MKPointAnnotation()
+        fakeUser.coordinate = hansungUniv
+        mapView.addAnnotation(fakeUser)
     }
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         // capture progress view width for marker animation
         progressWidth = progressView.bounds.width
+        [centerButton, zoomInButton, zoomOutButton].forEach { btn in
+            btn?.layer.cornerRadius = 10
+            btn!.clipsToBounds = true
+        }
     }
 
     // MARK: - Configuration
@@ -140,6 +165,7 @@ class WalkViewController: UIViewController {
         lottie.backgroundColor = .clear
         lottie.isOpaque = false
         lottie.loopMode  = .loop
+        lottie.isUserInteractionEnabled = false
         lottie.play()
     }
 
@@ -182,6 +208,21 @@ class WalkViewController: UIViewController {
         startTimer()
         updateStats()
         startLocationUpdates()
+        
+        simulator.mode = .walk
+        let next = simulator.step()
+        updateMap(to: next)
+    }
+    
+    private func updateMap(to coord: CLLocationCoordinate2D) {
+        // 중심 이동
+        mapView.setCenter(coord, animated: true)
+
+        // 핀 표시
+        mapView.removeAnnotations(mapView.annotations)
+        let pin = MKPointAnnotation()
+        pin.coordinate = coord
+        mapView.addAnnotation(pin)
     }
 
     private func pauseTracking() {
@@ -223,19 +264,32 @@ class WalkViewController: UIViewController {
 
     // MARK: - Timer
     private func startTimer(reset: Bool = true) {
+        // 1) 중복 스케줄 방지
+        trackingTimer?.invalidate()
+
+        // 2) 타이머 초기화
         if reset { elapsedSeconds = 0 }
         timerLabel.text = formattedTime(elapsedSeconds)
+
+        // 3) 1초마다 실행
         trackingTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
+            // 시간 업데이트
             self.elapsedSeconds += 1
             self.timerLabel.text = self.formattedTime(self.elapsedSeconds)
-            
-            // — 테스트 시뮬레이션: 초당 1m 이동했다고 가정
-            self.totalDistance += 1
 
-            // distance 기반으로 progressView 업데이트
+            // 일시정지 중이면 시뮬레이션·거리 누적·UI 갱신 모두 건너뛰기
+            guard !self.isPaused else { return }
+
+            // 자동 이동 시뮬레이션
+            let next = self.simulator.step()
+            self.updateMap(to: next)
+
+            // 거리 누적 및 목표 체크
+            self.totalDistance += self.simulator.mode.stepDistance
             self.updateStats()
         }
     }
+
 
     private func formattedTime(_ sec: Int) -> String {
         let h = sec / 3600, m = (sec % 3600) / 60, s = sec % 60
@@ -283,7 +337,12 @@ extension WalkViewController: CLLocationManagerDelegate {
         let prog = Float(min(totalDistance / maxDistance, 1.0))
         progressView.setProgress(prog, animated: true)
         // marker position
-        let x = progressView.frame.minX + CGFloat(prog) * progressWidth
+        _ = progressView.frame.minX + CGFloat(prog) * progressWidth
+        
+        // 목표 거리 도달 시 리워드 화면으로 이동
+        if totalDistance >= maxDistance {
+            endSession()
+        }
     }
 }
 

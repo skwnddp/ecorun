@@ -22,7 +22,7 @@ class RecycleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLottie()
-        navigationItem.title = "재활용 배출"
+//        navigationItem.title = "재활용 배출"
         
         [btnPet, btnCan, btnGlass, btnPaper].forEach { button in
             button?.layer.cornerRadius = 10
