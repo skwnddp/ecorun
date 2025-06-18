@@ -2,9 +2,7 @@
 
 사용자의 탄소 절감을 돕기 위해 **걷기, 달리기, 자전거**와 **분리 배출** 기능을 제공하는 iOS 앱으로  
 IOS 정책상 실제 GPS 대신 시뮬레이션을 통해 환경 제약 없이 쉽고 재미있게 운동 기록 및 분리 배출 관리를 경험을 통해 새싹을 키울 수 있어요
-
 ## 🚀 주요 기능
-
 | 기능               | 설명                                               |
 | ---------------- | ------------------------------------------------ |
 | **운동 활동**     | 걷기·달리기·자전거 모드를 선택하여 이동 거리 시뮬레이션            |
@@ -12,24 +10,28 @@ IOS 정책상 실제 GPS 대신 시뮬레이션을 통해 환경 제약 없이 �
 | **탄소 절감 기록**     | 절감량과 재활용 횟수를 `CarbonStorage`에 저장, ‘새싹 단계’ 레벨링 제공 |
 | **리워드 화면**       | 목표 달성 시 리워드 화면으로 이동, 절감량 확인                      |
 | **맵 제어**         | `MKMapView` 사용, 한성대 위치 기반으로 줌 인, 줌 아웃, 내 위치 이동 버튼 지원   |
-| **Lottie 애니메이션** | 모드별 애니메이션 재생으로 귀엽고 시각적인 재미 제공                        |
-
+| **Lottie 애니메이션** | 로티 애니메이션 재생으로 귀엽고 시각적인 재미 제공                        |
 ---
-
 ## 📸 스크린샷
-
-<!-- 스크린샷 이미지를 추가하세요 -->
-
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/ffefc3d1-8feb-406d-9d8a-10ae8c4753c8" width="200"/>
+  <img src="https://github.com/user-attachments/assets/14bb87ad-9024-4d9a-b1cb-33b9d1c275e1" width="200"/>
+  <img src="https://github.com/user-attachments/assets/c241f634-985d-45b3-b4ab-69c63a042466" width="200"/>
+  <img src="https://github.com/user-attachments/assets/14fc7b10-861a-46e8-ace3-5a1c0e61980f" width="200"/><br/>
+  <img src="https://github.com/user-attachments/assets/bc6ea62f-4e35-4666-ae7a-732471190f29" width="200"/>
+  <img src="https://github.com/user-attachments/assets/dcc73f45-0b98-4abc-98cc-b12082187750" width="200"/>
+  <img src="https://github.com/user-attachments/assets/b1080de8-ee62-4dd5-bef9-4fdb602120f2" width="200"/>
+  <img src="https://github.com/user-attachments/assets/ab37db1c-f403-41e2-b8e5-9033f3a2b2ff" width="200"/>
+</p>
 ---
-
 ## 🗂 프로젝트 구조
 
 ```text
 ecorun/
 ├── AppDelegate.swift
 ├── SceneDelegate.swift
-├── CarbonSource.swift          # 분리 배출 탄소 계산 공식
-├── CarbonStorage.swift         # 절감량·포인트·단계 저장 로직
+├── CarbonSource.swift          # 탄소 관련 로직 저장
+├── CarbonStorage.swift         # 절감량, 포인트, 단계 저장 로직 (DB, 클라우드로 확장 가능)
 ├── MovementSimulator.swift     # 운동 시뮬레이션 클래스
 ├── WalkViewController.swift    # 걷기 모드 화면
 ├── RunViewController.swift     # 달리기 모드 화면
